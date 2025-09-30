@@ -1,3 +1,5 @@
+/*style.css*/
+
 /* Modern reset */
 * {
   margin: 0;
@@ -381,4 +383,55 @@ select {
   .teams-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Celebration banner */
+.celebration {
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+.hidden { display: none; }
+
+/* Attendee list */
+.attendee-heading {
+  margin-top: 26px;
+  color: #64748b;
+  font-size: 16px;
+}
+.attendee-list {
+  margin-top: 8px;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 8px;
+}
+.attendee-list li {
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.attendee-name { font-weight: 600; color: #0f172a; }
+.chip {
+  font-size: 12px;
+  background: #e7f3ff;
+  color: #0b66c3;
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Error message style (reuses #greeting block) */
+.error-message {
+  background: #fff1f2;
+  color: #9f1239;
 }

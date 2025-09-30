@@ -1,14 +1,19 @@
+<!--index.html-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intel Sustainability Summit Check-In</title>
-    <!-- Add Font Awesome CSS -->
+
+    <!-- Icons (Font Awesome) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- App styles -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -24,22 +29,24 @@
         </p>
       </div>
     </div>
+
     <!-- Attendance tracking -->
     <div class="attendance-tracker">
       <div class="attendance-header">
-        <i class="fas fa-users"></i>
+        <i class="fas fa-users" aria-hidden="true"></i>
         Attendance: <span id="attendeeCount">0</span>/50
       </div>
       <div class="progress-container">
         <div id="progressBar" class="progress-bar"></div>
       </div>
     </div>
+
     <div class="container">
       <!-- Feedback message -->
       <p id="greeting"></p>
 
       <!-- Check-in form -->
-      <form class="check-in" id="checkInForm">
+      <form class="check-in" id="checkInForm" novalidate>
         <label for="attendeeName" class="form-label">Attendee Check-In</label>
         <div class="form-group">
           <div class="input-wrapper">
@@ -49,6 +56,7 @@
               name="attendeeName"
               placeholder="Enter name..."
               required
+              autocomplete="off"
             />
             <select id="teamSelect" name="team" required>
               <option value="" disabled selected>Select Team...</option>
@@ -58,7 +66,7 @@
             </select>
           </div>
           <button type="submit" id="checkInBtn">
-            <i class="fas fa-user-check"></i> Check In
+            <i class="fas fa-user-check" aria-hidden="true"></i> Check In
           </button>
         </div>
       </form>
@@ -80,6 +88,12 @@
             <span class="team-count" id="powerCount">0</span>
           </div>
         </div>
+
+        <!-- Attendee list + celebration (LevelUps) -->
+        <div id="celebration" class="celebration hidden" role="status" aria-live="polite"></div>
+
+        <h3 class="attendee-heading">Attendee List</h3>
+        <ul id="attendeeList" class="attendee-list"></ul>
       </div>
     </div>
 
@@ -92,6 +106,7 @@
       >
     </footer>
 
+    <!-- App script -->
     <script src="script.js"></script>
   </body>
 </html>
